@@ -1,0 +1,194 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage[usenames]{color}
+\pagestyle{empty}
+\leftmargin=0.25in
+\oddsidemargin=0.25in
+\textwidth=6.0in
+\topmargin=-0.25in
+\textheight=9.25in
+
+\raggedright
+
+\pagestyle{empty}
+
+
+% DEFINITIONS FOR RESUME
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}
+}
+
+\newcommand{\lineover}{
+	\begin{changemargin}{-0.05in}{-0.05in}
+		\vspace*{-8pt}
+		\hrulefill \\
+		\vspace*{-2pt}
+	\end{changemargin}
+}
+
+\newcommand{\header}[1]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+		\scshape{#1}\\
+  	\lineover
+	\end{changemargin}
+}
+
+\newcommand{\contact}[4]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+		\begin{center}
+			{\Large \scshape {#1}}\\ \smallskip
+			{#2}\\ \smallskip 
+			{#3}\\ \smallskip
+			{#4}\smallskip
+		\end{center}
+	\end{changemargin}
+}
+
+\newenvironment{body} {
+	\vspace*{-16pt}
+	\begin{changemargin}{-0.25in}{-0.5in}
+  }	
+	{\end{changemargin}
+}	
+
+% END RESUME DEFINITIONS
+\begin{document}
+
+%Name
+\contact{John A. Myrda}
+% Fix up this website!{\href{http://www.johnmyrda.com}{www.johnmyrda.com}}
+{\href{mailto:hello@johnmyrda.com}{hello@johnmyrda.com}}
+{\href{tel:7085071108}{(708) 507-1108}}
+
+% Objective
+%\header{Objective}
+
+%\begin{body}
+%	\vspace{14pt}
+%	To get a job
+%\end{body}
+
+%\smallskip
+
+% Education
+\header{Education}
+	\vspace{14pt}
+\begin{body}
+
+	\textbf{University of Illinois Urbana-Champaign} \hfill \emph{December 2012}{} \\
+	\hspace{4ex} Bachelor of Science in Engineering Physics \\
+	\hspace{4ex} Minor in Computer Science\\
+\end{body}
+
+%\smallskip
+
+% Experience
+\header{Experience}
+
+
+\begin{body}
+
+	\vspace{20pt}
+	\textbf{Cloudmark}, \emph{Software Development Engineer in Test} \hfill \emph{San Francisco, CA}\\
+	\hfill \emph{Oct 2015 - Present}\\
+	\vspace*{-16pt}
+	\begin{itemize} \itemsep -0pt  % reduce space between items
+		\item Write automated tests in Python for a custom test framework.
+		\item Write Python and bash scripts to improve day-to-day workflow.
+		\item Build multi-system test environments using docker and VMs to develop and run automated tests.
+		\item Investigate bugs using source code, REST APIs, automated tests, and Linux debugging tools.
+		\item Write and execute test plans for a high performance email and mobile messaging platform.
+	\end{itemize}
+	
+	\vspace{14pt}
+	\textbf{Wells Fargo}, \emph{Automated Regression Analyst} \hfill \emph{San Francisco, CA}\\
+	\hfill \emph{Feb 2015 - Oct 2015}\\
+	\vspace*{-16pt}
+	\begin{itemize} \itemsep -0pt  % reduce space between items 
+		\item Built RESTful APIs for web tools with JAX-RS/Jersey, Jackson, and SQL.
+		\item Architected web tools for the regression testing team with GWT (Google Web Toolkit).
+		\item Analyzed failures of Selenium tests for Wells Fargo mobile websites and fixed errors in test scripts.		
+	\end{itemize}
+
+
+
+	\vspace{14pt}
+	\textbf{UIUC Engineering IT} \hfill \emph{Urbana, IL}\\
+	\emph{Linux Working Group}\hfill \emph{Feb 2014 - August 2014}\\
+
+	\begin{itemize} \itemsep -0pt  % reduce space between items 
+		\item Provided user support for Linux issues in the College of Engineering.
+		\item Identified legacy Linux systems and migrated them to a Linux distribution maintained by Engineering IT.
+		\item Maintained and created internal and end user documentation for Engineering IT Linux distributions.
+	\end{itemize}
+
+%\smallskip
+
+
+	\emph{Assistant IT Specialist} \hfill \emph{Jan 2013 - Feb 2014}\\
+	\begin{itemize} \itemsep -0pt  % reduce space between items 
+		\item Managed traing and schedules for 12 Help Desk student staff members.
+		\item Maintained and created internal and end user documentation relating to common technical tasks.
+%		\item Something about networking and AD stuff maybe
+		\item Created web based tools with PHP, MySQL, and JavaScript to simplify daily Help Desk tasks.
+	\end{itemize}
+
+\end{body}
+
+\smallskip
+
+% Skills
+\header{Skills}
+
+\begin{body}
+	\vspace{14pt}
+	\textbf{Languages:}{} Python, C, Java, C{}\verb!++!, JavaScript\\%, \LaTeX \\
+	\textbf{Other:}{} Basic PCB design with EAGLE, Soldering, Arduino, Git/SVN\\
+\end{body}
+
+\smallskip
+
+% Page 2: Projects
+% \pagebreak
+
+\header{Projects}
+\begin{body}
+	\vspace{20pt}
+	%\emph{Full write-ups of these projects can be found on \href{http://www.johnmyrda.com}{johnmyrda.com}}\\
+	%\vspace{10pt}
+
+	%Easy Button Project
+	\textbf{Countdown Timer}\\
+	Converted an "Easy Button" into a configurable and resettable countdown timer 
+	using 7 segment displays, a TI MSP430 microcontroller, and firmware written in C.
+	
+	\vspace{8pt}
+	\textbf{Party Lamp}\\
+	Altered a standard table lamp into a portable LED light fixture which displays different color temperatures during normal usage and mathematically generated colorful patterns for parties. This project and the following were built with Arduino, high density WS2812B LED strips, and Lithium-ion batteries.
+	
+	\vspace{8pt}
+	\textbf{Lightbox Sign}\\
+	The lightbox can act as a whiteboard and served as the sign for a Burning Man camp. I wrote an LED pattern library to use with Arduino to control the lights. The lights display a sequence of entrancing animated patterns.
+	
+	\vspace{8pt}
+	\textbf{Connected Globes}\\
+	6 clusters of 24 LEDs connected by long 3-wire cables and diffused with Chinese lanterns. I designed a custom PCB for the controller. I extended my pattern library with more animations that better suit the ring-like geometry of this fixture.
+	
+
+		
+\end{body}
+%End Projects
+
+\end{document}

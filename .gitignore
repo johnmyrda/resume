@@ -1,0 +1,5 @@
+#texmaker generated files
+*.aux
+*.log
+*.out
+*.synctex.gz
