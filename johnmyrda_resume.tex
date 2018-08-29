@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage[hidelinks]{hyperref}
 \usepackage[usenames]{color}
+\usepackage{fontawesome}
 \pagestyle{empty}
 \leftmargin=0.25in
 \oddsidemargin=0.25in
@@ -45,14 +46,15 @@
 	\end{changemargin}
 }
 
-\newcommand{\contact}[4]{
+\newcommand{\contact}[7]{
 	\begin{changemargin}{-0.5in}{-0.5in}
-		\begin{center}
-			{\Large \scshape {#1}}\\ \smallskip
-			{#2}\\ \smallskip 
-			{#3}\\ \smallskip
-			{#4}\smallskip
-		\end{center}
+		\begin{tabular}{l l}
+			\Large \scshape {#1}\\
+			\textbf{#2}\\
+			{#3} & {#5}\\ 
+			{#4} & {#6}\\
+			 & {#7}\\
+		\end{tabular}
 	\end{changemargin}
 }
 
@@ -67,10 +69,14 @@
 \begin{document}
 
 %Name
-\contact{John A. Myrda}
-% Fix up this website!{\href{http://www.johnmyrda.com}{www.johnmyrda.com}}
-{\href{mailto:hello@johnmyrda.com}{hello@johnmyrda.com}}
-{\href{tel:7085071108}{(708) 507-1108}}
+\contact{John Myrda}
+{Software Engineer and Hardware Hacker}
+{\href{tel:7085071108}{\faPhone\ (708) 507-1108}}
+{\href{mailto:hello@johnmyrda.com}{\faEnvelope\ hello@johnmyrda.com}}
+{\href{https://www.johnmyrda.com}{\faLink\ www.johnmyrda.com}}
+{\href{https://github.com/johnmyrda/resume}{\faGithub\ github.com/johnmyrda}}
+{\href{https://www.linkedin.com/in/johnmyrda}{\faLinkedin\ linkedin.com/in/johnmyrda}}
+
 
 % Objective
 %\header{Objective}
@@ -105,10 +111,11 @@
 	\hfill \emph{Oct 2015 - July 2018}\\
 	\vspace*{-16pt}
 	\begin{itemize} \itemsep -0pt  % reduce space between items
-		\item Write automated tests in Python for a custom test framework.
-		\item Write Python and bash scripts to improve day-to-day workflow.
-		\item Build multi-system test environments using docker and VMs to develop and run automated tests.
-		\item Investigate bugs using source code, REST APIs, automated tests, and Linux debugging tools.
+	    \item Wrote Python and bash based tools to automate software release workflow.
+		\item Designed a web based tool to accelerate smoke test process.
+		\item Wrote automated tests in a custom Python test framework.
+		\item Set up multi-system test environments with Docker and VMs to run tests and analyze performance.
+\item Investigate bugs using C source code, REST APIs, a Python test harness, and Linux debugging tools.
 		\item Write and execute test plans for a high performance email and mobile messaging platform.
 	\end{itemize}
 	
@@ -118,31 +125,22 @@
 	\vspace*{-16pt}
 	\begin{itemize} \itemsep -0pt  % reduce space between items 
 		\item Built RESTful APIs for web tools with JAX-RS/Jersey, Jackson, and SQL.
-		\item Architected web tools for the regression testing team with GWT (Google Web Toolkit).
-		\item Analyzed failures of Selenium tests for Wells Fargo mobile websites and fixed errors in test scripts.		
+		\item Architected web tools for the regression testing team with Java and the Google Web Toolkit (GWT).
+		\item Analyzed failures of Selenium tests for Wells Fargo mobile websites and fixed errors in test scripts.	
 	\end{itemize}
 
 
 
 	\vspace{14pt}
 	\textbf{UIUC Engineering IT} \hfill \emph{Urbana, IL}\\
-	\emph{Linux Working Group}\hfill \emph{Feb 2014 - August 2014}\\
+	\emph{Helpdesk IT and Linux Specialist}\hfill \emph{Feb 2014 - August 2014}\\
 
 	\begin{itemize} \itemsep -0pt  % reduce space between items 
 		\item Provided user support for Linux issues in the College of Engineering.
-		\item Identified legacy Linux systems and migrated them to a Linux distribution maintained by Engineering IT.
-		\item Maintained and created internal and end user documentation for Engineering IT Linux distributions.
-	\end{itemize}
-
-%\smallskip
-
-
-	\emph{Assistant IT Specialist} \hfill \emph{Jan 2013 - Feb 2014}\\
-	\begin{itemize} \itemsep -0pt  % reduce space between items 
+		\item Identified hundreds of legacy Linux systems and migrated them to UIUC maintained Linux distribution.
+		\item Maintained documentation for Engineering IT Linux distributions and common technical tasks.
 		\item Managed training and schedules for 12 Help Desk student staff members.
-		\item Maintained and created internal and end user documentation relating to common technical tasks.
-%		\item Something about networking and AD stuff maybe
-		\item Created web based tools with PHP, MySQL, and JavaScript to simplify daily Help Desk tasks.
+		\item Created web tools with PHP, MySQL, and JavaScript to monitor printer supply levels, access warranty information, and track equipment check-outs.
 	\end{itemize}
 
 \end{body}
@@ -154,8 +152,8 @@
 
 \begin{body}
 	\vspace{14pt}
-	\textbf{Languages:}{} Python, C, Java, C{}\verb!++!, JavaScript\\%, \LaTeX \\
-	\textbf{Other:}{} Basic PCB design with EAGLE, Soldering, Arduino, Git/SVN\\
+	\textbf{Programming Languages:}{} Python, C, Java, C{}\verb!++!, JavaScript\\%, \LaTeX \\
+	\textbf{Technical Skills:}{} PCB design , Soldering, Arduino \& AVR Microcontrollers, Git \& SVN\\
 \end{body}
 
 \smallskip
@@ -163,7 +161,7 @@
 % Page 2: Projects
 % \pagebreak
 
-\header{Projects}
+\header{Personal Projects}
 \begin{body}
 	\vspace{20pt}
 	%\emph{Full write-ups of these projects can be found on \href{http://www.johnmyrda.com}{johnmyrda.com}}\\
@@ -174,9 +172,7 @@
 	Converted an "Easy Button" into a configurable and resettable countdown timer 
 	using 7 segment displays, a TI MSP430 microcontroller, and firmware written in C.
 	
-	\vspace{8pt}
-	\textbf{Party Lamp}\\
-	Altered a standard table lamp into a portable LED light fixture which displays different color temperatures during normal usage and mathematically generated colorful patterns for parties. This project and the following were built with Arduino, high density WS2812B LED strips, and Lithium-ion batteries.
+
 	
 	\vspace{8pt}
 	\textbf{Lightbox Sign}\\
@@ -186,7 +182,9 @@
 	\textbf{Connected Globes}\\
 	6 clusters of 24 LEDs connected by long 3-wire cables and diffused with Chinese lanterns. I designed a custom PCB for the controller. I extended my pattern library with more animations that better suit the ring-like geometry of this fixture.
 	
-
+	\vspace{8pt}
+	\textbf{Midi Drum Lights}\\
+	Built a multi-device light controller for colorful real-time visualizations of an electronic drum kit using MIDI , 2 Arduino devices, and the i2c protocol.
 		
 \end{body}
 %End Projects
